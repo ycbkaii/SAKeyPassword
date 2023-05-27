@@ -2,11 +2,13 @@
 <?php  
 /**
  * @author Yanis Chiouar <yanis.chiouar@gmail.com>
- * @version 1.0
+ * @version 1.2
  */
+
+require "User.php";
+
 const VERSION = "1.0";
 const AUTHOR = "Yanis Chiouar";
-
 
 //Function which ables to the user to input some data
 function readUser(){
@@ -40,7 +42,8 @@ function main(){
             login();
         }else if (trim(strtoupper($choice)) == "R") {
             register();
-            
+        }else if(trim(strtoupper($choice))){
+            clearData();
         }
         system("clear");
         
@@ -272,7 +275,7 @@ function index($name_confirmed, $id_confirmed, $password_confirmed){
 
             case 'CLR' :
                 echo "test CLR";
-                //clearAccounts($id_confirmed);
+                clearData($id_confirmed);
                 break;
 
             default:
@@ -317,11 +320,15 @@ function _cryptfile(){
 
 }
 
-// FUnction which uncrypts files
+// Function which uncrypts files
 function _uncryptfile(){
 
 }
 
+//Function to clear the data of your account
+function clearData($id_confirmed){
+    
+}
 
 main();
 

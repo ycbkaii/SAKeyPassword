@@ -1,3 +1,5 @@
 # We drop the gitScript 
 *.sh
 
+# We drop the class objects
+/src/User.php
