@@ -24,9 +24,11 @@ class User{
 
     public function startSession(){
         if($this->id != null && $this->nickname != null && $this->password != null){
-            $this->index($this->nickname, $this->id, $this->password);
+            $this->index();
         }else{
             echo "Error : You can't start the session because your informations are incorrect...";
+            sleep(1.2);
+            system("cls | clear");
         }
     }
 
@@ -50,7 +52,11 @@ class User{
         fclose($file);
     }
 
-    private function index($name_confirmed, $id_confirmed, $password_confirmed){
+    private function index(){
+
+        $name_confirmed = $this->nickname;
+        $id_confirmed = $this->id;
+        $password_confirmed = $this->password;
 
         system("clear");
         echo "©SAKeySoftware\n";
