@@ -71,4 +71,4 @@ SAKey is developed and maintained by Yanis Chiouar. You can reach out to the aut
 
 ## Version
 
-Current version: 1.2
+Current version: 1.0
