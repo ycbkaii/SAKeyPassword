@@ -23,7 +23,7 @@ SAKey is a simple password management software written in PHP. It allows users t
 To run the SAKey software, use the following command:
 
 ```
-./SAKey.php
+./launch.sh
 ```
 
 ### Main Menu

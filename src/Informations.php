@@ -3,18 +3,19 @@
 class Informations{
     public static function createRow($id_confirmed,$name_confirmed,$password_confirmed){
         if($id_confirmed != null && $name_confirmed != null && $password_confirmed != null){
-            system("mkdir -p file/".$id_confirmed."_dir");
+            system("mkdir -p ../file/".$id_confirmed."_dir");
             system("clear");
             echo "©SAKeySoftware";
             echo "\n\n";
+            $read_input = new ReadInput();
             $id = time()."dac";
             echo "Name of the website ? \n";
-            $nameWebSite = $id."nws ".readUser();
+            $nameWebSite = $id."nws ".strval($read_input->readUser());
             echo "Name or Email of your account : \n";
-            $nameAccount = $id."na ".readUser();
+            $nameAccount = $id."na ".strval($read_input->readUser());
             echo "Your password :\n";
-            $passwordAccount = $id."pa ".readUser();
-            $f = fopen("file/".$id_confirmed."_dir/".$id_confirmed, "a");
+            $passwordAccount = $id."pa ".strval($read_input->readUser());
+            $f = fopen("../file/".$id_confirmed."_dir/".$id_confirmed, "a");
             echo "Loading .\n";
             fwrite($f,_cryptInput($name_confirmed, $nameWebSite ,$password_confirmed)."\n");
             system("clear");
@@ -32,8 +33,9 @@ class Informations{
     }
 
     public static function listeAccounts($id_confirmed,$name_confirmed,$password_confirmed){
-        $f = file("file/".$id_confirmed."_dir/".$id_confirmed."");
+        $f = file("../file/".$id_confirmed."_dir/".$id_confirmed."");
         $tmp = 0;
+        $read_input = new ReadInput();
         if($f != false){
             do{
                 foreach($f as $line){
@@ -58,11 +60,20 @@ class Informations{
                     }
                 }
                 echo "'Q' to leave\n";
-                $choice = readUser();
+                $choice = strval($read_input->readUser());
             }while(strtoupper(trim($choice)) != "Q");
         }
         
         
+    }
+
+
+    //Function to clear the data of your account
+    public function clearData($id_confirmed){
+        $f = fopen("../file/".$id_confirmed."_dir/".$id_confirmed."","w");
+        if($f != false){
+            fwrite($f,"");
+        }
     }
 }
 ?>

@@ -1,5 +1,6 @@
 <?php
 
+require 'Informations.php';
 class User{
 
     private $password;
@@ -10,7 +11,7 @@ class User{
         if($id == null){
             $this->nickname = $nickname;
             $this->password = $password;
-            $this->createId();
+            $this->id = $id;
         }else if($id != null){
             $this->nickname = $nickname;
             $this->password = $password;
@@ -34,13 +35,13 @@ class User{
 
 
     public function createId(){
-        if($this->id = null && $this->nickname != null && $this->password != null){
+        if($this->nickname != null && $this->password != null){
             $this->signUp();
         }
     }
 
     private function signUp(){
-        $file = fopen("file/usr","a");
+        $file = fopen("../file/usr","a");
         $id = time();
         $options = [
             'cost' => 12,
@@ -51,6 +52,8 @@ class User{
         fwrite($file, $id."dp ".$hashP."\n");
         fclose($file);
     }
+
+
 
     private function index(){
 
@@ -69,20 +72,23 @@ class User{
         echo "L : List your accounts stored by SAKey\n";
         echo "CLR : Clear your data you put in the files\n";
         echo "D : Disconnect\n";
-        $choice = readUser();
+        $choice = new ReadInput();
+        $choice = strval($choice->readUser());
         
+        $information = new Informations();
+
         while(strtoupper(trim($choice)) != 'D'){
             switch (strtoupper(trim($choice))) {
                 case 'C':
-                    createRow($id_confirmed,$name_confirmed,$password_confirmed);
+                    $information->createRow($id_confirmed,$name_confirmed,$password_confirmed);
                     break;
     
                 case 'L' :
-                    listeAccounts($id_confirmed,$name_confirmed,$password_confirmed);
+                    $information->listeAccounts($id_confirmed,$name_confirmed,$password_confirmed);
                     break;
     
                 case 'CLR' :
-                    clearData($id_confirmed);
+                    $information->clearData($id_confirmed);
                     break;
     
                 default:
@@ -99,15 +105,14 @@ class User{
             echo "L : List your accounts stored by SAKey\n";
             echo "CLR : Clear your data you put in the files\n";
             echo "D : Disconnect\n";
-            $choice = readUser();
+            $choice = new ReadInput();
+            $choice = strval($choice->readUser());
         }
         echo "Goodbye ! See you soon ;)\n";
         sleep(1);
     
     }
 
-
-    
 
 
 
