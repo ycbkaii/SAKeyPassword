@@ -1,4 +1,4 @@
-#!/usr/bin/php8.1
+#!/usr/bin/php
 <?php  
 /**
  * @author Yanis Chiouar
@@ -11,13 +11,26 @@ require "ReadInput.php";
 const VERSION = "1.0";
 const AUTHOR = "Yanis Chiouar";
 
+const yellow_color = "\033[33m";
+const reset_color = "\033[0m";
 
 
 
 //Function which ables to the user to choose what commands he wants
 function main(){
     system("clear");
-    echo "Welcome to 'SAKey', this is a little software which stocks and protects your passwords ! \n";
+    echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
+    echo "Welcome to 'SAKey', this is a little software which stores and protects your passwords ! \n";
     echo "@Version : ".VERSION."\n";
     echo "@Author : ".AUTHOR."\n";
     echo "\n\n";
