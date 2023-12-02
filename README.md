@@ -10,6 +10,11 @@ SAKey is a simple password management software written in PHP. It allows users t
 
 ### Installation
 
+#### For Debian based linux distro :
+
+Simply run `./launch.sh` and follow the instruction
+
+#### For other OS :
 1. Clone the SAKey repository or download the source code.
 2. Make sure you have PHP 8.1 installed on your system.
 3. Open a terminal and navigate to the SAKey directory.
@@ -20,7 +25,7 @@ SAKey is a simple password management software written in PHP. It allows users t
 
 ## Usage
 
-To run the SAKey software, use the following command:
+Once installed, You can run the SAKey software, use the following command:
 
 ```
 ./launch.sh
