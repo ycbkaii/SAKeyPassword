@@ -41,20 +41,23 @@ class User{
     }
 
     private function signUp(){
-        $file = fopen("../file/usr","a");
+        $file = fopen("../file/.usr","a");
         $id = time();
         $options = [
             'cost' => 12,
         ];
         $hashP = password_hash($this->password, PASSWORD_BCRYPT, $options);
         $hashN = password_hash($this->nickname, PASSWORD_BCRYPT, $options);
+        system("mkdir -p ../file");
         fwrite($file, $id."dn ".$hashN."\n");
         fwrite($file, $id."dp ".$hashP."\n");
         fclose($file);
     }
 
 
-
+/**
+ * TODO : LA DOC 
+ */
     private function index(){
 
         $name_confirmed = $this->nickname;
@@ -62,6 +65,17 @@ class User{
         $password_confirmed = $this->password;
 
         system("clear");
+        echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
         echo "©SAKeySoftware\n";
         echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or check them.";
         echo "\n\n";
@@ -95,6 +109,17 @@ class User{
                     break;
             }
             system("clear");
+            echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
             echo "©SAKeySoftware\n";
             echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or check them.";
             echo "\n\n";

@@ -46,6 +46,17 @@ function main(){
             register();
         }
         system("clear");
+        echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
         echo "Welcome to 'SAKey', this is a little software which stores and protects your passwords ! \n";
         echo "@Version : ".VERSION."\n";
         echo "@Author : ".AUTHOR."\n";
@@ -66,6 +77,17 @@ function main(){
 //Function to login to the user's account and stock his passwords
 function login(){
     system("clear");
+    echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
     echo "Welcome to 'SAKey', this is a little software which stocks and protects your passwords ! \n";
     echo "@Version : ".VERSION."\n";
     echo "@Author : ".AUTHOR."\n\n";
@@ -81,11 +103,12 @@ function login(){
     shell_exec('stty echo');
     echo "\n";
 
-    $file_creation = fopen("../file/usr","a");
+    system("mkdir -p ../file");
+    $file_creation = fopen("../file/.usr","a");
     fwrite($file_creation,"");
     fclose($file_creation);
 
-    $file = file("../file/usr");
+    $file = file("../file/.usr");
     $find = false;
 
     while($find == false){
@@ -124,6 +147,17 @@ function login(){
             $user->startSession();
         }else{
             system("clear");
+            echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
             echo "Error : Password or Nickname incorrect\n";
             sleep(1.5);
             system("clear");
@@ -149,6 +183,17 @@ function login(){
 //Function to register the user 
 function register(){
     system("clear");
+    echo yellow_color."      ___           ___           ___           ___                 
+    /\__\         /\  \         /|  |         /\__\                
+   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
+  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
+ /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
+/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
+\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
+ \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
+  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
+    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
+    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
     echo "Welcome to 'SAKey', this is a little software which stocks and protects your passwords ! \n";
     echo "@Version : ".VERSION."\n";
     echo "@Author : ".AUTHOR."\n\n";
@@ -176,6 +221,7 @@ function register(){
 
 
 //Function which crypt data
+
 function _cryptInput($name_confirmed, $input ,$password_confirmed){
     $key = $name_confirmed.$password_confirmed."$";
     $encrypted_chaine = openssl_encrypt($input, "AES-256-ECB" ,$key);
@@ -183,6 +229,7 @@ function _cryptInput($name_confirmed, $input ,$password_confirmed){
 }
 
 //Function which uncrypts data
+
 function _uncryptInput($name_confirmed,$input,$password_confirmed){
     
     $key = $name_confirmed.$password_confirmed."$";
@@ -191,15 +238,33 @@ function _uncryptInput($name_confirmed,$input,$password_confirmed){
     return $decrypted_chaine;
 }
 
-//Function which encrypts files
-function _cryptfile(){
 
-}
+
+//Function which encrypts files
+// function _encryptfile($idUser,$name_confirmed, $f ,$password_confirmed){
+//     $key = $name_confirmed.$password_confirmed."$";
+//     if(file_put_contents($f, openssl_encrypt($f, "AES-256-ECB", $key)) == false){
+//         echo "External Error...";
+//         sleep(1);
+        
+//     }
+
+// }
 
 // Function which uncrypts files
-function _uncryptfile(){
+// function _uncryptfile($idUser,$name_confirmed, $f ,$password_confirmed){
+//     $key = $name_confirmed.$password_confirmed."$";
+//     $fichier = openssl_decrypt(file_get_contents($f), "AES-256-ECB", $key);
+//     if($fichier == false){
+//         echo "External Error...";
+//         sleep(1);
+//         return [];
+        
+//     }
 
-}
+//     return $fichier;
+    
+// }
 
 main();
 

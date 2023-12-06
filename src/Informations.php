@@ -14,16 +14,18 @@ class Informations{
             echo "Name or Email of your account : \n";
             $nameAccount = $id."na ".strval($read_input->readUser());
             echo "Your password :\n";
+            shell_exec('stty -echo');
             $passwordAccount = $id."pa ".strval($read_input->readUser());
+            shell_exec('stty echo');
             $f = fopen("../file/".$id_confirmed."_dir/".$id_confirmed, "a");
             echo "Loading .\n";
-            fwrite($f,_cryptInput($name_confirmed, $nameWebSite ,$password_confirmed)."\n");
+            fwrite($f,_cryptInput($name_confirmed,$nameWebSite,$password_confirmed)."\n");
             system("clear");
             echo "Loading ..\n";
-            fwrite($f,_cryptInput($name_confirmed, $nameAccount ,$password_confirmed)."\n");
+            fwrite($f,_cryptInput($name_confirmed,$nameAccount,$password_confirmed)."\n");
             system("clear");
             echo "Loading ...\n";
-            fwrite($f,_cryptInput($name_confirmed, $passwordAccount ,$password_confirmed)."\n");
+            fwrite($f,_cryptInput($name_confirmed,$passwordAccount,$password_confirmed)."\n");
             system("clear");
             echo "Succes !\n";
             sleep(1);
@@ -32,6 +34,7 @@ class Informations{
     
     }
 
+    
     public static function listeAccounts($id_confirmed,$name_confirmed,$password_confirmed){
         $f = file("../file/".$id_confirmed."_dir/".$id_confirmed."");
         $tmp = 0;
