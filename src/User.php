@@ -41,6 +41,7 @@ class User{
     }
 
     private function signUp(){
+        system("mkdir -p ../file");
         $file = fopen("../file/.usr","a");
         $id = time();
         $options = [
