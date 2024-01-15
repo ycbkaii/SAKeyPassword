@@ -111,6 +111,7 @@ function login(){
     $file = file("../file/.usr");
     $find = false;
 
+    //TODO BUG SUR 2 NOMS D'UTILISATEURS
     while($find == false){
         $i = 0;
         while($i < count($file) && !isset($name_confirmed)){
@@ -130,6 +131,7 @@ function login(){
                 $hash = explode(" ",$file[$i]);
                 if (str_contains($hash[0],'dp')) {
                     if(trim($hash[0],"dp") == trim($id_confirmed,"dn")){
+                    
                         if(password_verify($password,rtrim($hash[1]))){
                             $password_confirmed = $password;   
                         }
@@ -140,6 +142,8 @@ function login(){
                 $i++;
             }
         }
+
+        
 
         if(isset($name_confirmed) && isset($id_confirmed) && isset($password_confirmed)){
             $find = true;
