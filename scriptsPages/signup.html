@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion / Inscription</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+        }
+
+        .form input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        .form input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 150, 255, 0.8);
+        }
+
+        .form button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .form button:hover {
+            background-color: #45a049;
+        }
+
+        .arrows-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .arrow {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .arrow:hover {
+            color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .container .signup-mode {
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="form-container">
+            <!-- Connexion Form -->
+            <div class="form" id="login-form">
+                <h2>Connexion</h2>
+                <form action="/login" method="POST">
+                    <input type="text" name="pseudo" placeholder="Pseudo" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+
+            <!-- Inscription Form -->
+            <div class="form" id="signup-form">
+                <h2>Inscription</h2>
+                <form action="/signup" method="POST">
+                    <input type="text" name="pseudo" placeholder="Pseudo" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <input type="password" name="confirm_password" placeholder="Confirmez le mot de passe" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toggle Arrows -->
+        <div class="arrows-container">
+            <button class="arrow" onclick="showLogin()">&#8592;</button>
+            <button class="arrow" onclick="showSignup()">&#8594;</button>
+        </div>
+    </div>
+
+    <script>
+        const formContainer = document.getElementById('form-container');
+
+        function showSignup() {
+            formContainer.classList.add('signup-mode');
+        }
+
+        function showLogin() {
+            formContainer.classList.remove('signup-mode');
+        }
+    </script>
+</body>
+</html>
