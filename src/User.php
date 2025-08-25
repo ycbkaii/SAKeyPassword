@@ -56,9 +56,7 @@ class User{
     }
 
 
-/**
- * TODO : LA DOC 
- */
+
     private function index(){
 
         $name_confirmed = $this->nickname;
@@ -66,26 +64,22 @@ class User{
         $password_confirmed = $this->password;
 
         system("clear");
-        echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
+        echo yellow_color."                                                             
+        oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
+        888            888      888  o88    888    88    888  88   
+         888oooooo    8  88     888888      888ooo8        888     
+                888  8oooo88    888  88o    888    oo      888     
+        o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
+        ".reset_color.PHP_EOL."\n\n";
         echo "©SAKeySoftware\n";
-        echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or check them.";
+        echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or list them.";
         echo "\n\n";
         
     
         echo "Main :\n\n";
-        echo "C : Create a row to store the password of a website\n";
+        echo "C : Create a row to store a website's password\n";
         echo "L : List your accounts stored by SAKey\n";
-        echo "CLR : Clear your data you put in the files\n";
+        echo "CLR : Clear your private data\n";
         echo "D : Disconnect\n";
         $choice = new ReadInput();
         $choice = strval($choice->readUser());
@@ -110,26 +104,22 @@ class User{
                     break;
             }
             system("clear");
-            echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
+            echo yellow_color."                                                             
+            oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
+            888            888      888  o88    888    88    888  88   
+             888oooooo    8  88     888888      888ooo8        888     
+                    888  8oooo88    888  88o    888    oo      888     
+            o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
+            ".reset_color.PHP_EOL."\n\n";
             echo "©SAKeySoftware\n";
-            echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or check them.";
+            echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or list them.";
             echo "\n\n";
     
     
             echo "Main :\n\n";
-            echo "C : Create a row to store the password of a website\n";
+            echo "C : Create a row to store a website's password\n";
             echo "L : List your accounts stored by SAKey\n";
-            echo "CLR : Clear your data you put in the files\n";
+            echo "CLR : Clear your private data\n";
             echo "D : Disconnect\n";
             $choice = new ReadInput();
             $choice = strval($choice->readUser());

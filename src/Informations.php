@@ -19,13 +19,13 @@ class Informations{
             shell_exec('stty echo');
             $f = fopen("../file/".$id_confirmed."_dir/".$id_confirmed, "a");
             echo "Loading .\n";
-            fwrite($f,_cryptInput($name_confirmed,$nameWebSite,$password_confirmed)."\n");
+            fwrite($f,_cryptInput($name_confirmed,$nameWebSite,$password_confirmed, $id_confirmed)."\n");
             system("clear");
             echo "Loading ..\n";
-            fwrite($f,_cryptInput($name_confirmed,$nameAccount,$password_confirmed)."\n");
+            fwrite($f,_cryptInput($name_confirmed,$nameAccount,$password_confirmed, $id_confirmed)."\n");
             system("clear");
             echo "Loading ...\n";
-            fwrite($f,_cryptInput($name_confirmed,$passwordAccount,$password_confirmed)."\n");
+            fwrite($f,_cryptInput($name_confirmed,$passwordAccount,$password_confirmed, $id_confirmed)."\n");
             system("clear");
             echo "Succes !\n";
             sleep(1);
@@ -42,7 +42,7 @@ class Informations{
         if($f != false){
             do{
                 foreach($f as $line){
-                    $line = _uncryptInput($name_confirmed,trim($line),$password_confirmed);
+                    $line = _uncryptInput($name_confirmed,trim($line),$password_confirmed, $id_confirmed);
                     $a_line = explode(" ",$line);
                     if(str_contains($a_line[0],"nws")){
                         $tmp = trim($a_line[0],"nws");

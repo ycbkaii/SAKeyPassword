@@ -76,4 +76,9 @@ SAKey is developed and maintained by Yanis Chiouar. You can reach out to the aut
 
 ## Version
 
-Current version: 1.0
+Current version: 1.1
+
+## Patch notes V1.1
+
+- New Encryption : **AES-256-CBC**
+- Check Integrity of data stored with **hmac method** 

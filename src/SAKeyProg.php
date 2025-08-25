@@ -15,28 +15,27 @@ const yellow_color = "\033[33m";
 const reset_color = "\033[0m";
 
 
+const TITRE = yellow_color."                                                             
+oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
+888            888      888  o88    888    88    888  88   
+ 888oooooo    8  88     888888      888ooo8        888     
+        888  8oooo88    888  88o    888    oo      888     
+o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
+".reset_color.PHP_EOL."\n\n";
+
 
 //Function which ables to the user to choose what commands he wants
 function main(){
     system("clear");
-    echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
-    echo "Welcome to 'SAKey', this is a little software which stores and protects your passwords ! \n";
-    echo "@Version : ".VERSION."\n";
-    echo "@Author : ".AUTHOR."\n";
+    echo TITRE;
+    echo "Welcome to 'SAKey', it's a little software which stores and protects your passwords ! \n";
+    echo yellow_color."@Version : ".VERSION.reset_color."\n";
+    echo yellow_color."@Author : ".AUTHOR.reset_color."\n";
     echo "\n\n";
     echo "L : to login to your account\n";
     echo "R : to register an account\n";
     echo "Q : to quit the program\n";
+    
     $choice = new ReadInput();
     $choice = strval($choice->readUser());
     while (trim(strtoupper($choice)) != "Q") {
@@ -46,24 +45,15 @@ function main(){
             register();
         }
         system("clear");
-        echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
-        echo "Welcome to 'SAKey', this is a little software which stores and protects your passwords ! \n";
-        echo "@Version : ".VERSION."\n";
-        echo "@Author : ".AUTHOR."\n";
+        echo TITRE;
+        echo "Welcome to 'SAKey', it's a little software which stores and protects your passwords ! \n";
+        echo yellow_color."@Version : ".VERSION.reset_color."\n";
+        echo yellow_color."@Author : ".AUTHOR.reset_color."\n";
         echo "\n\n";
         echo "L : to login to your account\n";
         echo "R : to register an account\n";
         echo "Q : to quit the program\n";
+        
         $choice = new ReadInput();
         $choice = strval($choice->readUser());
     }
@@ -77,20 +67,10 @@ function main(){
 //Function to login to the user's account and stock his passwords
 function login(){
     system("clear");
-    echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
-    echo "Welcome to 'SAKey', this is a little software which stocks and protects your passwords ! \n";
-    echo "@Version : ".VERSION."\n";
-    echo "@Author : ".AUTHOR."\n\n";
+    echo TITRE;
+    echo "Welcome to 'SAKey', it's a little software which stocks and protects your passwords ! \n";
+    echo yellow_color."@Version : ".VERSION.reset_color."\n";
+    echo yellow_color."@Author : ".AUTHOR.reset_color."\n";
     echo "©SAKeySoftware";
     echo "\n\n";
     echo "Nickname : ";
@@ -111,38 +91,41 @@ function login(){
     $file = file("../file/.usr");
     $find = false;
 
-    //TODO BUG SUR 2 NOMS D'UTILISATEURS
+    
     while($find == false){
         $i = 0;
         while($i < count($file) && !isset($name_confirmed)){
             $hash = explode(" ",$file[$i]);
             if (str_contains($hash[0],'dn')) {
                 if(password_verify($name,rtrim($hash[1]))){
-                    $name_confirmed = $name;
+                    
                     $id_confirmed = $hash[0];
+
+                    if(isset($id_confirmed)){
+                        $j = 0;
+                        while($j < count($file) && !isset($password_confirmed)){
+                            $hash = explode(" ",$file[$j]);
+                            if (str_contains($hash[0],'dp')) {
+                                if(trim($hash[0],"dp") == trim($id_confirmed,"dn")){
+                                
+                                    if(password_verify($password,rtrim($hash[1]))){
+                                        $password_confirmed = $password;   
+                                        $name_confirmed = $name;
+                                    }
+                                    
+            
+                                }
+                            }
+                            $j++;
+                        }
+                    }
                     
                 }
             }
             $i++;
         }
-        if(isset($name_confirmed) && isset($id_confirmed)){
-            $i = 0;
-            while($i < count($file) && !isset($password_confirmed)){
-                $hash = explode(" ",$file[$i]);
-                if (str_contains($hash[0],'dp')) {
-                    if(trim($hash[0],"dp") == trim($id_confirmed,"dn")){
-                    
-                        if(password_verify($password,rtrim($hash[1]))){
-                            $password_confirmed = $password;   
-                        }
-                        
-
-                    }
-                }
-                $i++;
-            }
-        }
-
+        
+        
         
 
         if(isset($name_confirmed) && isset($id_confirmed) && isset($password_confirmed)){
@@ -151,23 +134,13 @@ function login(){
             $user->startSession();
         }else{
             system("clear");
-            echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
+            echo TITRE;
             echo "Error : Password or Nickname incorrect\n";
             sleep(1.5);
             system("clear");
-            echo "Welcome to 'SAKey', this is a little software which stocks and protects your passwords ! \n";
-            echo "@Version : ".VERSION."\n";
-            echo "@Author : ".AUTHOR."\n\n";
+            echo "Welcome to 'SAKey', it's a little software which stocks and protects your passwords ! \n";
+            echo yellow_color."@Version : ".VERSION.reset_color."\n";
+            echo yellow_color."@Author : ".AUTHOR.reset_color."\n";
             echo "©SAKeySoftware";
             echo "\n\n";
             echo "Nickname : ";
@@ -187,20 +160,10 @@ function login(){
 //Function to register the user 
 function register(){
     system("clear");
-    echo yellow_color."      ___           ___           ___           ___                 
-    /\__\         /\  \         /|  |         /\__\                
-   /:/ _/_       /::\  \       |:|  |        /:/ _/_         ___   
-  /:/ /\  \     /:/\:\  \      |:|  |       /:/ /\__\       /|  |  
- /:/ /::\  \   /:/ /::\  \   __|:|  |      /:/ /:/ _/_     |:|  |  
-/:/_/:/\:\__\ /:/_/:/\:\__\ /\ |:|__|____ /:/_/:/ /\__\    |:|  |  
-\:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/__/ \:\/:/ /:/  /  __|:|__|  
- \::/ /:/  /   \::/__/       \::/~~/~      \::/_/:/  /  /::::\  \  
-  \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /   ~~~~\:\  \ 
-    /:/  /       \:\__\        \:\__\        \::/  /         \:\__\
-    \/__/         \/__/         \/__/         \/__/           \/__/".reset_color.PHP_EOL."\n\n";
-    echo "Welcome to 'SAKey', this is a little software which stocks and protects your passwords ! \n";
-    echo "@Version : ".VERSION."\n";
-    echo "@Author : ".AUTHOR."\n\n";
+    echo TITRE;
+    echo "Welcome to 'SAKey', it's a little software which stocks and protects your passwords ! \n";
+    echo yellow_color."@Version : ".VERSION.reset_color."\n";
+    echo yellow_color."@Author : ".AUTHOR.reset_color."\n";
     echo "©SAKeySoftware";
     echo "\n\n";
     echo "Input a new Nickanme \n";
@@ -226,49 +189,53 @@ function register(){
 
 //Function which crypt data
 
-function _cryptInput($name_confirmed, $input ,$password_confirmed){
-    $key = $name_confirmed.$password_confirmed."$";
-    $encrypted_chaine = openssl_encrypt($input, "AES-256-ECB" ,$key);
-    return $encrypted_chaine;
+function _cryptInput($name_confirmed, $input ,$password_confirmed, $id_confirmed){
+    
+    $base_key = $name_confirmed.$password_confirmed."$";
+    $key = hash_pbkdf2("sha256", $base_key, $id_confirmed, 100000, 32, true);;
+
+    // Random IV of 16 octets
+    $iv = random_bytes(openssl_cipher_iv_length("AES-256-CBC"));
+
+    // Encrypting
+    $ciphertext = openssl_encrypt($input, "AES-256-CBC", $key, OPENSSL_RAW_DATA, $iv);
+
+    // HMAC for integrity
+    $hmac = hash_hmac('sha256', $ciphertext, $key, true);
+
+    return base64_encode($iv . $hmac . $ciphertext);
 }
 
 //Function which uncrypts data
 
-function _uncryptInput($name_confirmed,$input,$password_confirmed){
+function _uncryptInput($name_confirmed,$input,$password_confirmed, $id_confirmed){
+
+    $input = base64_decode($input);
+
+    $ivLength = openssl_cipher_iv_length("AES-256-CBC"); // 16 octets
+    $hmacLength = 32; // 32 octets
+
+
+    $iv = substr($input, 0, $ivLength);
+    $hmac = substr($input, $ivLength, $hmacLength);
+    $ciphertext = substr($input, $ivLength + $hmacLength);
+
+
+    $base_key = $name_confirmed.$password_confirmed."$";
+    $key = hash_pbkdf2("sha256", $base_key, $id_confirmed, 100000, 32, true);
+
+
+    // Check integrity with HMAC
+    $calculatedHmac = hash_hmac('sha256', $ciphertext, $key, true);
+    if (!hash_equals($hmac, $calculatedHmac)) {
+        return "Data encrypted compromised";
+    }
+
+    $plaintext = openssl_decrypt($ciphertext, "AES-256-CBC", $key, OPENSSL_RAW_DATA, $iv);
     
-    $key = $name_confirmed.$password_confirmed."$";
-    $decrypted_chaine = openssl_decrypt($input, "AES-256-ECB" ,$key);
-    
-    return $decrypted_chaine;
+    return $plaintext;
 }
 
-
-
-//Function which encrypts files
-// function _encryptfile($idUser,$name_confirmed, $f ,$password_confirmed){
-//     $key = $name_confirmed.$password_confirmed."$";
-//     if(file_put_contents($f, openssl_encrypt($f, "AES-256-ECB", $key)) == false){
-//         echo "External Error...";
-//         sleep(1);
-        
-//     }
-
-// }
-
-// Function which uncrypts files
-// function _uncryptfile($idUser,$name_confirmed, $f ,$password_confirmed){
-//     $key = $name_confirmed.$password_confirmed."$";
-//     $fichier = openssl_decrypt(file_get_contents($f), "AES-256-ECB", $key);
-//     if($fichier == false){
-//         echo "External Error...";
-//         sleep(1);
-//         return [];
-        
-//     }
-
-//     return $fichier;
-    
-// }
 
 main();
 
