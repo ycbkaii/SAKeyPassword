@@ -81,4 +81,4 @@ Current version: 1.1
 ## Patch notes V1.1
 
 - New Encryption : **AES-256-CBC**
-- Check Integrity of data stored with **hmac method** 
+- Check the integrity of stored data with the **hmac method**
