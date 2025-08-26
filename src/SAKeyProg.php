@@ -8,7 +8,7 @@
 require "User.php";
 require "ReadInput.php";
 
-const VERSION = "1.0";
+const VERSION = "1.1";
 const AUTHOR = "Yanis Chiouar";
 
 const yellow_color = "\033[33m";
