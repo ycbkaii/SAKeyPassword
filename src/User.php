@@ -65,11 +65,11 @@ class User{
 
         system("clear");
         echo yellow_color."                                                             
-        oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
-        888            888      888  o88    888    88    888  88   
-         888oooooo    8  88     888888      888ooo8        888     
-                888  8oooo88    888  88o    888    oo      888     
-        o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
+oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
+888            888      888  o88    888    88    888  88   
+    888oooooo    8  88     888888      888ooo8        888     
+        888  8oooo88    888  88o    888    oo      888     
+o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
         ".reset_color.PHP_EOL."\n\n";
         echo "©SAKeySoftware\n";
         echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or list them.";
@@ -105,11 +105,11 @@ class User{
             }
             system("clear");
             echo yellow_color."                                                             
-            oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
-            888            888      888  o88    888    88    888  88   
-             888oooooo    8  88     888888      888ooo8        888     
-                    888  8oooo88    888  88o    888    oo      888     
-            o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
+oooooooo8      o      oooo   oooo ooooooooooo ooooo  oooo 
+888            888      888  o88    888    88    888  88   
+    888oooooo    8  88     888888      888ooo8        888     
+        888  8oooo88    888  88o    888    oo      888     
+o88oooo888 o88o  o888o o888o o888o o888ooo8888    o888o                          
             ".reset_color.PHP_EOL."\n\n";
             echo "©SAKeySoftware\n";
             echo "Hello ".trim($name_confirmed)." ! Here, store your passwords or list them.";
