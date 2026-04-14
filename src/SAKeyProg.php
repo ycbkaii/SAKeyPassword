@@ -157,7 +157,7 @@ function login(){
 
 }
 
-//Function to register the user 
+//Function for registration of a new account 
 function register(){
     system("clear");
     echo TITRE;
@@ -187,7 +187,7 @@ function register(){
 }
 
 
-//Function which crypt data
+//Function which encrypts data
 
 function _cryptInput($name_confirmed, $input ,$password_confirmed, $id_confirmed){
     
@@ -206,9 +206,9 @@ function _cryptInput($name_confirmed, $input ,$password_confirmed, $id_confirmed
     return base64_encode($iv . $hmac . $ciphertext);
 }
 
-//Function which uncrypts data
+//Function which decrypts data
 
-function _uncryptInput($name_confirmed,$input,$password_confirmed, $id_confirmed){
+function _decryptInput($name_confirmed,$input,$password_confirmed, $id_confirmed){
 
     $input = base64_decode($input);
 

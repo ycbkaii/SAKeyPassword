@@ -42,7 +42,7 @@ class Informations{
         if($f != false){
             do{
                 foreach($f as $line){
-                    $line = _uncryptInput($name_confirmed,trim($line),$password_confirmed, $id_confirmed);
+                    $line = _decryptInput($name_confirmed,trim($line),$password_confirmed, $id_confirmed);
                     $a_line = explode(" ",$line);
                     if(str_contains($a_line[0],"nws")){
                         $tmp = trim($a_line[0],"nws");
